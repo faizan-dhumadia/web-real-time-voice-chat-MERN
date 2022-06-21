@@ -14,13 +14,13 @@ class OtpServices {
         return otp;
     }
 
-    async sendBySMS(phone, otp) {
-        return await twilio.messages.create({
-            to: phone,
-            from: process.env.SMS_FROM_NUMBER,
-            body: `Your CoderHouse OTP is ${otp}`
-        })
-    }
+    // async sendBySMS(phone, otp) {
+    //     return await twilio.messages.create({
+    //         to: phone,
+    //         from: process.env.SMS_FROM_NUMBER,
+    //         body: `Your Let's Talk OTP is ${otp}`
+    //     })
+    // }
     verifyOTP(hashedOtp, data) {
         let computedHash = hashServices.hashOtp(data);
         return computedHash == hashedOtp;
